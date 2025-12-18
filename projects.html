@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Projects • Jake Shuey</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Set theme ASAP to avoid dark→light flash -->
+    <script>
+        (function () {
+            const storageKey = 'theme';
+            const root = document.documentElement;
+            const saved = localStorage.getItem(storageKey);
+
+            let choice = (saved === 'light' || saved === 'dark') ? saved : null;
+
+            // If no saved theme, fall back to system preference
+            if (!choice) {
+                const prefersDark = window.matchMedia &&
+                    window.matchMedia('(prefers-color-scheme: dark)').matches;
+                choice = prefersDark ? 'dark' : 'light';
+            }
+
+            root.dataset.theme = choice; // sets data-theme="light" or "dark"
+        })();
+    </script>
+
+    <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+        <a class="brand" href="index.html" aria-label="Go to homepage">
+            <img src="assets/icons/TauIcon-NoBG.png" alt="" width="50" height="50" />
+            <span>Jake Shuey</span>
+        </a>
+
+        <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
+            <span class="visually-hidden">Menu</span>
+            ☰
+        </button>
+
+        <nav id="site-nav" class="site-nav" aria-label="Primary">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="work.html">Work Experience</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="hobbies.html">Hobbies</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="theme-toggle" id="themeToggle" aria-pressed="false">🌙</button>
+        </nav>
+    </header>
+
+    <!--- 
+
+    <main id="main" class="container">
+        <!-- 1) Top “rundown” cards 
+        <section aria-labelledby="overview">
+            <h1 id="overview">Personal Projects</h1>
+            <p class="muted">A collection of in-progress and finished personal projects.</p>
+
+            <div class="grid cards work-cards">
+                <article class="card">
+                    <h2>High Power Rocketry</h2>
+                    <p>Modular Rocket Design Without Epoxy for L1 Certification.</p>
+                    <ul class="pill-list">
+                        <li>Tolerancing</li>
+                        <li>Additive Manufacturing</li>
+                        <li>Engineering Design</li>
+                    </ul>
+                    <a class="link" href="#role-hpr">Jump to details →</a>
+                </article>
+
+                <article class="card">
+                    <h2>Glide-Back-Rocket</h2>
+                    <p>System of rocket recovery using a glider system.</p>
+                    <ul class="pill-list">
+                        <li>SolidWorks</li>
+                        <li>GD&T</li>
+                        <li>FEA</li>
+                        <li>CFD</li>
+                    </ul>
+                    <a class="link" href="#role-gbr">Jump to details →</a>
+                </article>
+
+                <article class="card">
+                    <h2>Active Fin Stabalization</h2>
+                    <p>Assisting in creation of an AFS System of a high power rocket.</p>
+                    <ul class="pill-list">
+                        <li>
+                            Monte-Carlo Simulations
+                        </li>
+                        <li>
+                            In-Depth CFD in SolidWorks
+                        </li>
+                        <li>
+                            Safety Advisory
+                        </li>
+                    </ul>
+                    <a class="link" href="#role-afs">Jump to details →</a>
+                </article>
+
+                <article class="card">
+                    <h2>Unexploded Ordinance Surveillance</h2>
+                    <p> Semi-automated drone system to identify and mark unexploded ordiances.</p>
+                    <ul class="pill-list">
+                        <li>
+                            Aerodynamic Calculations
+                        </li>
+                        <li>
+                            Autonomous Search Patterns
+                        </li>
+                        <li>
+                            Humanitarian Focus
+                        </li>
+                        <li>
+                            Broad Sytem Implementation
+                        </li>
+                    </ul>
+                    <a class="link" href="#role-uxo">Jump to details →</a>
+                </article>
+
+                <!-- Add more short cards as needed 
+            </div>
+        </section>
+
+        <!-- 2) Deep-dive sections (one per role) 
+        <section class="work-section" id="role-hpr" aria-labelledby="role-hpr-h">
+            <header class="work-section-header">
+                <h2 id="role-hpr-h">High Power Rocketry</h2>
+                <p class="muted">Level One Cert In Progress</p>
+                <ul class="bullets">
+                    <li>
+                        Focusing on the creation of a modular system for different missions.
+                    </li>
+                    <li>
+                        Several rockets have been tested with the current model being XR-9. Nicknamed Stella!
+                    </li>
+                    <li>
+                        Developed a long term storage and preparation system for my rockets. Which includes the
+                        serialization of my parts and their stage of development.
+                    </li>
+                </ul>
+            </header>
+
+            <!-- Horizontally scrollable photo reel with snap + captions 
+            <div class="media-reel" role="region" aria-label="High Power Rocketry Gallery">
+                <figure class="media">
+                    <img src="assets/img/rocket1.jpeg" alt="One of our first ones!" loading="lazy">
+                    <figcaption>One of our very first rockets</figcaption>
+                </figure>
+                <figure class="media">
+                    <img src="assets/img/rocketryattempts.jpeg" alt="Launch Day!" loading="lazy">
+                    <figcaption>Launch Day is the Best Day!</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section class="work-section" id="role-gbr" aria-labelledby="role-gbr-h">
+            <header class="work-section-header">
+                <h2 id="role-gbr-h">Glide-Back-Rocket</h2>
+                <p class="muted">In Progress</p>
+                <ul class="bullets">
+                    <li>
+                        Initial designs inspired by the Energia-Buran and its boosters. Future iterative designs
+                        included this inspiration, but also some unique ones due to our own limitations.
+                    </li>
+                    <li>
+                        Conducted CFD on several parts of the vehicle including the tail fins,
+                        wings, nose, and body assembly.
+                    </li>
+                    <li>
+                        Assisted in the creation of technical drawings and creating a proper
+                        repository of information and documentation.
+                    </li>
+                </ul>
+            </header>
+
+            <div class="media-reel" role="region" aria-label="GBR Gallery">
+                <figure class="media">
+                    <img src="assets/img/buranbooster.JPG" alt="Buran Booster Drawing" loading="lazy">
+                    <figcaption>Example of one of our inspirations.</figcaption>
+                </figure>
+                <figure class="media">
+                    <img src="assets/img/LangleyGBB.png" alt="The Langley GBB" loading="lazy">
+                    <figcaption>The GBB designed by Langley which also served as inspiration.</figcaption>
+                </figure>
+                <figure class="media">
+                    <img src="assets/img/buran2.JPG" alt="Another Buran Example" loading="lazy">
+                    <p>Another Buran Inspiration</p>
+                </figure>
+            </div>
+        </section>
+
+        <section class="work-section" id="role-afs" aria-labelledby="role-afs-h">
+            <header class="work-section-header">
+                <h1 id="role-afs-h">Active Fin Stabalization</h1>
+                <p class="muted">In Progress</p>
+                <ul class="bullets">
+                    <li>
+                        Developed a series of Monte-Carlo Simulations to test for potential performance.
+                        It was also formatted to allow for testing of non-AFS rocket systems.
+                    </li>
+                    <li>
+                        AFS stabality and performance was heavily tested using the Monte-Carlo Sims and
+                        are being used to justify flight profiles and expectations at numerous launch sites.
+                    </li>
+                    <li>
+                        Introduced systematic safety analysis that would be used alongside the Monte-Carlo Simualations
+                        to ensure safety of club members and launch teams.
+                    </li>
+                </ul>
+            </header>
+            <div class="media-reel" roles="region" aria-label="AFS Gallery">
+                <figure class="media">
+                    <img src="assets/img/apogee.png" alt="Apogee Graph" loading="lazy">
+                    <figcaption>Histogram of Apogees found via Monte-Carlo</figcaption>
+                </figure>
+                <figure class="media">
+                    <img src="assets/img/landing.png" alt="MC Landing Cloud" loading="lazy">
+                    <figcaption>Approximate Landings of the Rocket via Monte-Carlo</figcaption>
+                </figure>
+                <figure class="media">
+                    <img src="assets/img/samples-xz.png" alt="Downwind Distance To Apogee" loading="lazy">
+                    <figcaption>Approximations of downwind travel as the rocket ascends to apogee.</figcaption>
+                </figure>
+                <figure class="media">
+                    <img src="assets/img/flightplan.png" alt="Approximate Downwind Flight Paths" loading="lazy">
+                    <figcaption>Approximate final flightpath of the rocket in the x-y coordinates.</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section class="work-section" id="role-uxo" aria-labelledby="role-uxo-h">
+            <header class="work-section-header">
+                <h1 id="role-uxo-h">
+                    Unexploded Ordinance Surveillance, Analysis, and Recovery
+                </h1>
+                <p class="muted">
+                    In Progress - Early Prototyping Stage
+                </p>
+                <ul class="bullets">
+                    <li>
+                        Inspired by my military service I wanted to create a drone that —instead of causing death—
+                        would instead prevent it. It would do so by assisting in the identification and removal
+                        of Unexploded-Ordinance (UXOs) in civilian population centers and areas where they may contact
+                        it.
+                    </li>
+                    <li>
+                        Initial plans used ground penetrating radar (GPR), but it was too expensive for me.
+                        I instead focused on sensitive magnetometers, IR and visual imaging, and flagging.
+                        By giving demining teams access to this type of equipment would facilitate safer and more
+                        reliable UXO detection and elimination.
+                    </li>
+                </ul>
+            </header>
+        </section>
+    </main>
+----->
+    <main class="container">
+        <section id="project-overviews">
+            <section id="project-hpr" class="layout2">
+                <div class="sidebar2">
+                    <h1>High Power Rocketry</h1>
+                    <p>
+                        My clubs in college have gotten me into High Power Rocketry as a hobby.
+                        I love the challenges that come with it and my current challenge, in part as
+                        my L1 certification for High Power Rocketry, is designing a rapidly repairable,
+                        modular, simple assembly high power rocket.
+                    </p>
+                </div>
+                <div class="middlebar2">
+                    <div class="gallery">
+                        <img src="assets/img/rocket1.jpeg" alt="">
+                        <img src="assets/img/rocketryattempts.jpeg" alt="">
+                    </div>
+                </div>
+            </section>
+            <section id="project-afs" class="layout2">
+                <div class="sidebar2">
+                    <h1>Active Fin Stabalization</h1>
+                    <p>
+                        My main role within this project was simulations and planning. As such I coded
+                        a large MATLAB program to facilitate testing via Monte-Carlo simulations. This gave us
+                        the ability to make long term projections of the rocket and base any alterations to design or
+                        launch profile on the simulations. Whilst they still needed real-world verification before we
+                        truly trusted them it allowed quality changes to be made. After it predicted the flight path of
+                        one of our prototype rockets within three meters of its
+                        actual landing we were confident in using it to plan and assess projects.
+                    </p>
+
+                </div>
+                <div class="middlebar2">
+                    <div class="gallery">
+                        <img src="assets/img/apogee.png" alt="">
+                        <img src="assets/img/ascent-zt.png" alt="">
+                        <img src="assets/img/flightplan.png" alt="">
+                        <img src="assets/img/flight-zt.png" alt="">
+                    </div>
+                </div>
+            </section>
+            <section id="project-gbb" class="layout2">
+                <div class="sidebar2">
+                    <h1>Glide-Back-Rocket</h1>
+                    <p>
+                        Taking inspiration from the Soviet <i>Energia-Buran</i> spaceplane and the NASA
+                        <i>Space Shuttle</i> program we began divising ways to create a rocket, not just a booster,
+                        that is able to glide back to its point of liftoff without significant human imput.
+                        This has proven to be incredibly difficult in part due to scale and stability.
+                        Generally you want a rocket to have a stability (Referred to as a Caliber of Stability)
+                        around one. Higher and you lose maneuverability, but lower and you lose stable flight.
+                    </p>
+                    <p>
+                        The current design as of 01 December 2025 focuses on turning traditional 3 tail fin rocket
+                        design into one that implements wings in place of two of the fins and a vertical
+                        stabalizer in place of the third and final fin. This is intended to be coupled with the
+                        presence of 4 canards that are treated as expendable for the purposes of recovery.
+                    </p>
+                </div>
+                <div class="middlebar2">
+                    <div class="gallery">
+                        <img src="assets/img/buran2.JPG" alt="">
+                        <img src="assets/img/buranbooster.JPG" alt="">
+                        <img src="assets/img/LangleyGBB.png" alt="">
+                        <img src="assets/img/gbbcalc1.jpeg" alt="">
+                        <img src="assets/img/gbbcalc2.jpeg" alt="">
+                        <img src="assets/img/gbbcalc3.jpeg" alt="">
+                    </div>
+                </div>
+            </section>
+            <section id="project-UXO" class="layout2">
+                <div class="sidebar2">
+                    <h2>Unexploded-Ordinance Unmanned Aerial Vehicle</h2>
+                    <p>
+                        This! This is my baby.
+                    </p>
+                    <p>
+                        During my time in the Army I worked with a lot of different automated
+                        and semi-automated systems. The ones that intrigued me then though were
+                        the UAVs. In particular I was fond of the Switchblade-600 Suicide Drones.
+                        However, not in the way you may imagine.
+                    </p>
+                    <p>
+                        I was fascinated by the way it detected and found its targets, but also being
+                        aware of the life lost to these kinds of things I decided to do the opposite.
+                        How can I use that technology to save lives? As such was born ARGUS.
+                        The Aerial Recon of Ground based Unexploded-Ordinance Suite.
+                    </p>
+                </div>
+                <div class="middlebar2">
+                    <div class="gallery">
+                        <img src="assets/img/switchblade.jpg" alt="">
+                        <img src="assets/img/puma_v2_i45.jpg" alt="">
+                    </div>
+                </div>
+            </section>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <p> © <span id="year"></span> Jake Shuey• <a href="about.html">About</a> • <a
+                href="mailto:shueyjakob@gmail.com">shueyjakob@gmail.com</a> •
+            <a href="#top">Return to Top</a>
+        </p>
+        <p style="font-size: x-small;">You may toggle between light and dark mode
+            with the button at the far right of the nav bar</p>
+    </footer>
+
+    <script src="assets/js/main.js" defer></script>
+</body>
+
+</html>

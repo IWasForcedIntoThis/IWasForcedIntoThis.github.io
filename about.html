@@ -1,0 +1,720 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>About Me • Jake Shuey</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Portfolio of Jake Shuey" />
+    <!-- Set theme ASAP to avoid dark→light flash -->
+    <script>
+        (function () {
+            const storageKey = 'theme';
+            const root = document.documentElement;
+            const saved = localStorage.getItem(storageKey);
+
+            let choice = (saved === 'light' || saved === 'dark') ? saved : null;
+
+            // If no saved theme, fall back to system preference
+            if (!choice) {
+                const prefersDark = window.matchMedia &&
+                    window.matchMedia('(prefers-color-scheme: dark)').matches;
+                choice = prefersDark ? 'dark' : 'light';
+            }
+
+            root.dataset.theme = choice; // sets data-theme="light" or "dark"
+        })();
+    </script>
+    <link rel="preload" href="assets/css/styles.css" as="style" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="icon" href="assets/icons/favicon.ico" sizes="any" />
+    <link rel="icon" href="assets/icons/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png" />
+</head>
+
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+        <a class="brand" href="index.html" aria-label="Go to homepage">
+            <img src="assets/icons/TauIcon-NoBG.png" alt="" width="50" height="50" />
+            <span>Jake Shuey</span>
+        </a>
+
+        <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
+            <span class="visually-hidden">Menu</span>
+            ☰
+        </button>
+
+        <nav id="site-nav" class="site-nav" aria-label="Primary">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="work.html">Work Experience</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="hobbies.html">Hobbies</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="theme-toggle" id="themeToggle" aria-pressed="false">🌙</button>
+        </nav>
+    </header>
+
+
+    <!--- 
+    <main id="main" class="container">
+        <section id="top" class="hero">
+            <h1>Good to see you!</h1>
+            <figure class="media">
+                <img src="assets/img/rainierselfie.jpg" alt="Me!">
+            </figure>
+        </section>
+        <section>
+            <h1>Behold! My Cats!</h1>
+            <p style="text-indent: 50px;">
+                I have three currently. Juniper, Indiana, and Gizmo. Whom we call Juni, Indy, and...
+                well just Gizmo. Or some variation.
+            </p>
+            <section class="grid cards">
+                <article class="card">
+                    <figure class="media">
+                        <img src="assets/img/smol.jpeg" alt="The Boys Being Tiny">
+                    </figure>
+                    <p>Gizmo being an adorable kitten.</p>
+                </article>
+                <article class="card">
+                    <figure class="media">
+                        <img src="assets/img/loverboy.jpeg" alt="Got my Cats!" loading="lazy">
+                    </figure>
+                    <p>Indy showering his brother in love.</p>
+                    <p style="font-size: small;">(Actual brother! They're litter-mates)</p>
+                </article>
+                <article class="card">
+                    <figure class="media">
+                        <img src="assets/img//juni1.jpeg" alt="Juni baby">
+                    </figure>
+                    <p>Juni as a kitten as well. She likes being tossed and I don't know why.</p>
+                </article>
+                <article class="card">
+                    <figure class="media">
+                        <img src="assets/img/junidrawer.jpeg" alt="Juni In Her Natural Environment">
+                    </figure>
+                    <p>Juni in her natural habitat. Being a naughty cat!</p>
+                </article>
+                <article class="card">
+                    <figure class="media">
+                        <img src="assets/img/jumper.jpeg" alt="Gizmo hunting">
+                    </figure>
+                    <p>Gizmo trying to be a hunter. Thankfully he didn't jump here.</p>
+                </article>
+                <article class="card">
+                    <figure class="media">
+                        <img src="assets/img/bigger.jpeg" alt="The boys bigger!">
+                    </figure>
+                    <p>
+                        Here are the two boys together as they usually are. Gizmo is on the left and Indy
+                        is on the right
+                    </p>
+                </article>
+            </section>
+        </section>
+
+        <section>
+            <h2>Now for my Tali!</h2>
+            <p style="text-indent: 50px;">Talkeetna, or just Tali, is our wonderful pup. As of November 2025 she is
+                about 3 and a half. A beautiful Border Collie with an attitude like that of a husky. She makes me
+                endlessly happy.</p>
+
+            <section class="grid cards">
+                <article class="card">
+                    <figure class="media">
+                        <img src="assets/img/talisnow.jpeg" alt="She loves the snow!">
+                    </figure>
+                    <p>She is obsessessed with the snow and playing in it!</p>
+                </article>
+                <article class="card">
+                    <figure class="media">
+                        <img src="assets/img/taligoggles.jpeg" alt="Getting ready!">
+                    </figure>
+                    <p>She's ready for her snow-days!</p>
+                </article>
+                <article class="card">
+                    <figure class="media">
+                        <img src="assets/img/tali2.jpeg" alt="Sunshine Time">
+                    </figure>
+                    <p>Tali does enjoy her outside time too! Even if it doesn't have snow.</p>
+                </article>
+                <article class="card">
+                    <figure class="media">
+                        <img src="assets/img/taliroll.jpeg" alt="She loves the grass too">
+                    </figure>
+                    <p>She's also a huge fan of well groomed grass!</p>
+                </article>
+            </section>
+        </section>
+
+        <section>
+            <h1>Now for me and my partner.</h1>
+            <p>
+                As we've been together for 9 years as of September 2025 we rarely do much without
+                each other.
+            </p>
+            <section class="grid cards">
+                <article class="card">
+                    <figure class="media">
+                        <img src="assets/img/seals.jpeg" alt="Seal Demo">
+                    </figure>
+                    <p>Both of us love zoos and especially the Denver Zoo.</p>
+                </article>
+                <article class="card">
+                    <figure class="media">
+                        <img src="assets/img/taliemily.jpeg" alt="Tali at the Maze">
+                    </figure>
+                    <p>Tali and Emily loving life at a pumpkin patch!</p>
+                </article>
+                <article class="card">
+                    <figure class="media">
+                        <img src="assets/img/burnedhike.jpeg" alt="Loved the hike despite the burn">
+                    </figure>
+                    <p>Loved the hike! But had a burn so bad it required the ER afterwards.</p>
+                </article>
+                <article class="card">
+                    <figure class="media">
+                        <img src="assets/img/treekangaroo.jpeg" alt="Emily's Favorite">
+                    </figure>
+                    <p>
+                        Emily's favorite animal! While in a way. She loves Tree Kangaroos,
+                        but specifically the Goodfellows which this one is not. Still a cutie though!
+                    </p>
+                </article>
+                <article class="card">
+                    <figure class="media">
+                        <img src="assets/img/serval.jpg" alt="My favorite!">
+                    </figure>
+                    <p>Sadly no pictures of mine —I've been unable to see them in person— but I love the Serval!</p>
+                </article>
+            </section>
+            <p style="text-indent: 50px;">
+                As you can imagine I take family very seriously and love them dearly.
+                I will always put them first over anyone or anything and will not shift in that belief.
+            </p>
+        </section>
+
+        <section>
+            <h1>My Trips and Adventures.</h1>
+            <p style="text-indent: 50px;">Thankfully I've been able to go on a few fun trips too! This is in reverse
+                chronological order from my trip to Europe. We began in Oslo and ended in Geneva.</p>
+            <section>
+                <h1>My trip around Europe with my friends. This is Geneva!</h1>
+                <section>
+                    <article class="card">
+                        <figure class="media">
+                            <img src="assets/img/cernhiggs.jpeg" alt="CERN Statue">
+                        </figure>
+                        <p>A statue outside of CERN in Geneva</p>
+                    </article>
+                    <article class="card">
+                        <figure class="media">
+                            <img src="assets/img/geneva1.jpeg" alt="UN HQ">
+                        </figure>
+                        <p>One of many UN HQs in Geneva</p>
+                    </article>
+                    <article class="card">
+                        <figure class="media">
+                            <img src="assets/img/wozchoully.jpeg" alt="Best Friend">
+                        </figure>
+                        <p>My best friend Jacob Wozney in Choully, Switzerland.</p>
+                    </article>
+                </section>
+            </section>
+            <section>
+                <h1>This is our time in the Netherlands with Jacob's sister Tessi.</h1>
+                <section>
+                    <article class="card">
+                        <figure class="media">
+                            <img src="assets/img/amsterdammain.jpeg" alt="Amsterdam Station">
+                        </figure>
+                        <p>The Main Station in Amsterdam</p>
+                    </article>
+                    <article class="card">
+                        <figure class="media">
+                            <img src="assets/img/utrecht1.jpeg" alt="Out in Utrecht">
+                        </figure>
+                        <p>A tunnel in Utrecht with a fun bar.</p>
+                    </article>
+                    <article class="card">
+                        <figure class="media">
+                            <img src="assets/img/utrechtkayak.jpeg" alt="Kayaking">
+                        </figure>
+                        <p>Kayaking in Utrecht Canals</p>
+                    </article>
+                    <article class="card">
+                        <figure class="media">
+                            <img src="assets/img/tessiwozkayak.jpeg" alt="Tessi and Woz">
+                        </figure>
+                        <p>Wozney and his sister Tessi Kayaking with me and Colin</p>
+                    </article>
+                    <article class="card">
+                        <figure class="media">
+                            <img src="assets/img/utrechtbikes.jpeg" alt="Leaving for the club">
+                        </figure>
+                        <p>Tessi and her friends taking us to a club in Utrecht.</p>
+                        <p>I loved the bikes in Utrecht.</p>
+                    </article>
+                    <article class="card">
+                        <figure class="media">
+                            <img src="assets/img/tessi.jpeg" alt="Tessi at breakfast">
+                        </figure>
+                        <p>Tessi took us out for a fun Dutch breakfast.</p>
+                    </article>
+                </section>
+            </section>
+            <section>
+                <h1>Our trip from Oslo to Utrecht!</h1>
+                <p>We were supposed to go straight from Copenhagen to Utrecht, but ended up in Koln.</p>
+                <article class="card">
+                    <figure class="media">
+                        <img src="assets/img/koln1.jpeg" alt="Koln Cathredral">
+                    </figure>
+                    <p>Jaw dropping Gothic Architecture!</p>
+                </article>
+                <article class="card">
+                    <figure class="media">
+                        <img src="assets/img/kolnadventure.jpeg" alt="Swarma Temple">
+                    </figure>
+                    <p>
+                        Our adventure in Koln led here! To a Turkish place the local who suggested it
+                        referred to as "Shwarma Heaven".
+                    </p>
+                </article>
+                <article class="card">
+                    <figure class="media">
+                        <img src="assets/img/copenhagen1.jpeg" alt="Copenhagen Stop!">
+                    </figure>
+                    <p>Stopped for a bit in Copenhagen on our travel to Utrecht.</p>
+                    <p style="font-size: x-small;">Koln was an accidental stop, but a welcome one in our travels.
+                    </p>
+                </article>
+            </section>
+
+            <section>
+                <h1>Our time in Norway!</h1>
+                <p>
+                    My favorite part for sure. The history, the food, the beer. Wouldn't trade this
+                    experience for the world!
+                </p>
+                <article class="card">
+                    <figure class="media">
+                        <img src="assets/img/overoslo.jpeg" alt="Leaving Oslo">
+                    </figure>
+                    <p>In leaving Oslo we took a trip on a cruise!</p>
+                    <p>Jacob and Colin regretted their drink choices in the morning.</p>
+                </article>
+                <article class="card">
+                    <figure class="media">
+                        <img src="assets/img/scream.jpeg" alt="Saw the Scream!">
+                    </figure>
+                    <p>Saw the "Scream" by Evard Munch. The national painter of Norway!</p>
+                </article>
+                <article class="card">
+                    <figure class="media">
+                        <img src="assets/img/shrimpcruise.jpeg" alt="Another cruise!">
+                    </figure>
+                    <p>Also had to enjoy a fjord cruise with shrimp.</p>
+                </article>
+                <article class="card">
+                    <figure class="media">
+                        <img src="assets/img/jekyll.jpeg" alt="Jekyll Pub">
+                    </figure>
+                    <p>One of many good bars in Central Oslo</p>
+                </article>
+                <article class="card">
+                    <figure class="media">
+                        <img src="assets/img/basementbar.jpeg" alt="Speakeasy in Oslo">
+                    </figure>
+                    <p>Speakeasy style bar hidden in Oslo. Wonderful people and wonderful atmosphere!</p>
+                </article>
+                <article class="card">
+                    <figure class="media">
+                        <img src="assets/img/milleniumtower.jpeg" alt="Oldest Tower in Norway">
+                    </figure>
+                    <p>The Sløttsfjell in Tønsberg, Norway.</p>
+                    <p style="font-size: small;">Sløttsfjell translates literally to Castle Mountain or more accurately
+                        'The
+                        Castle on the Mountain'.
+                    </p>
+                </article>
+                <article class="card">
+                    <figure class="media">
+                        <img src="assets/img/lunchwithtrude.jpeg" alt="Lunch with my Family">
+                    </figure>
+                    <p>Lunch with my Norwegian family. Coming from an immigrant family there's quite a few of them!</p>
+                </article>
+                <article class="card">
+                    <figure class="media">
+                        <img src="assets/img/whaleskel.jpeg" alt="Whale Skeleton">
+                    </figure>
+                    <p>A whale skeleton in the a museum on the history of whaling in Norway in Tønsberg.</p>
+                </article>
+                <article class="card">
+                    <figure class="media">
+                        <img src="assets/img/akerhuswall.jpeg" alt="Akerhus Walls">
+                    </figure>
+                    <p>The walls on Akershus castle in Oslo</p>
+                </article>
+                <article class="card">
+                    <figure class="media">
+                        <img src="assets/img/harborview.jpeg" alt="Harbor View from Akershus">
+                    </figure>
+                    <p>The view of the Oslo harbor from the walls of Akershus Castle.</p>
+                </article>
+                <article class="card">
+                    <figure class="media">
+                        <img src="assets/img/cannonoveroslo.jpeg" alt="The Cannon Still Guarding">
+                    </figure>
+                    <p>The cannon's of Akershus still guarding the harbor.</p>
+                </article>
+                <article class="card">
+                    <figure class="media">
+                        <img src="assets/img/fdr.jpeg" alt="FDR in Oslo.">
+                    </figure>
+                    <p>
+                        If you're American this statue probably surprises you greatly.
+                        The United States hosted the Norwegian Royal Family, excluding the king
+                        and prince —Kønig Haakon VII and future Kønig Olav V respectively— who
+                        organized the Norwegian resistance and government in exile following the invasion
+                        of Norway by Nazi Germany. This statue was put up by Kønig Olav V after his
+                        ascendency to the throne of Norway.
+                    </p>
+                </article>
+                <article class="card">
+                    <figure class="media">
+                        <img src="assets/img/trude.jpeg" alt="Trude after the Parade">
+                    </figure>
+                    <p>Cousin Trude showing us around Oslo.</p>
+                </article>
+                <article class="card">
+                    <figure class="media">
+                        <img src="assets/img/17mai-march.jpeg" alt="17 Mai Police March">
+                    </figure>
+                    <p>
+                        A massive parade during 17 Mai. Over 50,000 school children and thousands more professionals,
+                        soldiers, police, and others. Truly beautiful to witness.
+                    </p>
+                </article>
+                <article class="card">
+                    <figure class="media">
+                        <img src="assets/img/17mai-royal.jpeg" alt="Royal Palce">
+                    </figure>
+                    <p>Norwegian Royal Palace during 17 Mai</p>
+                </article>
+                <article class="card">
+                    <figure class="media">
+                        <img src="assets/img/17mai-trio.jpeg" alt="In front of the Palace">
+                    </figure>
+                    <p>Myself, Colin, and Jacob in front of the Norwegian Royal Palace</p>
+                </article>
+                <article class="card">
+                    <figure class="media">
+                        <img src="assets/img/trude2.jpeg" alt="Cousin Trude">
+                    </figure>
+                    <p>
+                        Trude and I in front of the Royal Palace of Oslo on 17 Mai. Norwegian Constitution Day.
+                    </p>
+                </article>
+            </section>
+    </main>
+
+    --->
+
+
+    <main class="container">
+        <section id="About Overview">
+            <h1 style="text-align: center;">Welcome!</h1>
+            <p class="overview text">
+                Glad to see you care about <i>me</i> and not just what I've done. This will be a much
+                more ever changing and never quite finished page in comparison to the rest.
+                I also really hope you love pictures and —most importantly— pictures of animals
+                and my various trips, friends, and family.
+                As you can imagine from that I am a big family man. I firmly believe in setting them
+                first above all and don't deviate from that much. Whilst I adore and love my work
+                I know that at the end of the day I need to experience life to its fullest with the
+                ones I love the most.
+            </p>
+        </section>
+        <section id="Animals" class="layout2">
+            <div class="sidebar2">
+                <h1>
+                    Surprise! I have a lot of animals whom I love very much.
+                </h1>
+                <p>
+                    We have three cats. Gizmo and Indiana who are litter-mates! They're quite lost if the other is
+                    gone for anything like vet appointments or what-not. The other cat is our little
+                    evil tortie called Juniper (or just Juni). She's fiesty, but also super snuggly
+                    once she likes you. Just takes a long time to do so.
+                </p>
+                <p>
+                    We also have a wonderful dog by the name of Talkeetna (Tali) and she's amazing!
+                    She's a border collie with the most beautiful brown coat and pretty eyes. It helps
+                    that she's also incredibly smart. Perhaps more than is good for her!
+                </p>
+            </div>
+            <div class="middlebar2">
+                <div class="media-reel">
+                    <figure class="media">
+                        <img src="assets/img/smol.jpeg" alt="">
+                        <p>My boy Gizmo as a little kitten!</p>
+                    </figure>
+                    <figure class="media">
+                        <img src="assets/img/bigger.jpeg" alt="">
+                        <p>The two orange boys! Gizmo is on the left and Indiana (Indy for short) is on the right.</p>
+                    </figure>
+                    <figure class="media">
+                        <img src="assets/img/juni1.jpeg" alt="">
+                        <p>
+                            Juni as a kitten! She always let me toss her around, but never my partner.
+                            Still dont know why.
+                        </p>
+                    </figure>
+                    <figure class="media">
+                        <img src="assets/img/junidrawer.jpeg" alt="">
+                        <p>Juni being a menace and getting in cabinets and drawers. As per her MO.</p>
+                    </figure>
+                    <figure class="media">
+                        <img src="assets/img/loverboy.jpeg" alt="">
+                    </figure>
+                    <figure class="media">
+                        <img src="assets/img/jumper.jpeg" alt="">
+                    </figure>
+                    <figure class="media">
+                        <img src="assets/img/tali2.jpeg" alt="">
+                        <p>Tali enjoying her time in the sun!</p>
+                    </figure>
+                    <figure class="media">
+                        <img src="assets/img/talisnow.jpeg" alt="">
+                    </figure>
+                    <figure class="media">
+                        <img src="assets/img/taligoggles.jpeg" alt="">
+                    </figure>
+                    <figure class="media">
+                        <img src="assets/img/taliroll.jpeg" alt="">
+                    </figure>
+                </div>
+            </div>
+        </section>
+        <section id="Emily and Family" class="layout2">
+            <div id="Emily Head" class="sidebar2">
+                <h1>
+                    Of course my family too.
+                </h1>
+                <p>
+                    Who would I be without my Emily? Honestly probably much worse off. She has been my rock
+                    for over 9 years now and I wouldn't trade that for the world itself. She's extremely
+                    smart and successful in her own right as well. A Doctorate of Veterinary Medicine Student
+                    at Colorado State University, she has always been driven and has always impressed. She drives me
+                    in much similar ways and always encourages me to see the good that I can —and have— done.
+                </p>
+            </div>
+            <div class="middlebar2" id="Family Pictures">
+                <div class="media-reel">
+                    <figure class="media">
+                        <img src="assets/img/taliemily.jpeg" alt="">
+                    </figure>
+                    <figure class="media">
+                        <img src="assets/img/burnedhike.jpeg" alt="">
+                    </figure>
+                    <figure class="media">
+                        <img src="assets/img/seals.jpeg" alt="">
+                        <p>We're big fans of zoos and especially the Denver Zoo!</p>
+                    </figure>
+                    <figure class="media">
+                        <img src="assets/img/treekangaroo.jpeg" alt="">
+                        <p>
+                            While technically not her <i>favorite</i> animal its close! Her actual favorite
+                            is the Goodfellows Tree Kangaroo.
+                        </p>
+                    </figure>
+                    <figure class="media">
+                        <img src="assets/img/serval.jpg" alt="">
+                        <p>My favorite! Though never seen in person, sadly, I deeply love Servals.</p>
+                    </figure>
+                </div>
+            </div>
+        </section>
+        <section id="Trips!">
+            <h1 style="text-align: center;">Now for some of my trips!</h1>
+            <p class="overview text">
+                I love traveling and have been very lucky to travel all over the world.
+                Wether that be with the army or with friends, its been an incredible experience
+                and one I always recommend to others. Of course it's not always feasible, but that
+                is why I feel so lucky to have had the chances to do so.
+            </p>
+            <section id="Norway Trip" class="layout2">
+                <div class="sidebar2">
+                    <h1 style="text-align: center;">Norway</h1>
+                    <p>
+                        This was Norway. My gradmother emmigrated to the United States following
+                        the Second World War so there's still much here —and many people just the same—
+                        that I am deeply connected to. Having been unable to travel here in the past I took the
+                        chance as soon as it was there.
+                    </p>
+                </div>
+                <div class="middlebar2">
+                    <div class="media-reel">
+                        <figure class="media">
+                            <img src="assets/img/17mai-march.jpeg" alt="">
+                        </figure>
+                        <figure class="media">
+                            <img src="assets/img/17mai-royal.jpeg" alt="">
+                        </figure>
+                        <figure class="media">
+                            <img src="assets/img/17mai-royal2.jpeg" alt="">
+                        </figure>
+                        <figure class="media">
+                            <img src="assets/img/17mai-trio.jpeg" alt="">
+                        </figure>
+                        <figure class="media">
+                            <img src="assets/img/trude2.jpeg" alt="">
+                            <p>My wonderful cousin Trude!</p>
+                        </figure>
+                        <figure class="media">
+                            <img src="assets/img/trude.jpeg" alt="">
+                        </figure>
+                        <figure class="media">
+                            <img src="assets/img/akerhuswall.jpeg" alt="">
+                            <p>The —still very imposing— walls of Akershus Castle in Oslo.</p>
+                        </figure>
+                        <figure class="media">
+                            <img src="assets/img/harborview.jpeg" alt="">
+                            <p>Akershus Castle providing views of Oslo Harbor.</p>
+                        </figure>
+                        <figure class="media">
+                            <img src="assets/img/cannonoveroslo.jpeg" alt="">
+                        </figure>
+                        <figure class="media">
+                            <img src="assets/img/whaleskel.jpeg" alt="">
+                        </figure>
+                        <figure class="media">
+                            <img src="assets/img/basementbar.jpeg" alt="">
+                        </figure>
+                        <figure class="media">
+                            <img src="assets/img/scream.jpeg" alt="">
+                        </figure>
+                        <figure class="media">
+                            <img src="assets/img/oslograves.jpeg" alt="">
+                        </figure>
+                        <figure class="media">
+                            <img src="assets/img/osloparliment.jpeg" alt="">
+                        </figure>
+                        <figure class="media">
+                            <img src="assets/img/shrimpcruise.jpeg" alt="">
+                        </figure>
+                        <figure class="media">
+                            <img src="assets/img/overoslo.jpeg" alt="">
+                        </figure>
+                    </div>
+                </div>
+            </section>
+            <section id="Copenhagen-Utretch" class="layout2">
+                <div id="Copenhagen to Utrecht Overview" class="sidebar2">
+                    <h1 style="text-align: center;">Copenhagen to Utrecht</h1>
+                    <p style="text-align: center; font-size: x-small; text-indent: 0px;">
+                        A misadventure for the ages.
+                    </p>
+                    <p class="overview text">
+                        Leaving Oslo we decided ot take some trains from Copenhagen to Utrecht.
+                        Jacob Wozney, my best friend and the blonde guy in the pictures, has a sister
+                        who was living there at the time. Figuring it an easy trip we visited around
+                        Copenhagen a bit and saw the sights before leaving, but ended up in Koln instead.
+                        It wasn't all bad though! We got some awesome Shwarma.
+                    </p>
+                </div>
+                <div id="Copenhagen-Utrecht Adventures" class="middlebar2">
+                    <div class="media-reel">
+                        <figure class="media">
+                            <img src="assets/img/copenhagen1.jpeg" alt="">
+                        </figure>
+                        <figure class="media">
+                            <img src="assets/img/koln1.jpeg" alt="">
+                        </figure>
+                        <figure class="media">
+                            <img src="assets/img/kolnadventure.jpeg" alt="">
+                        </figure>
+                    </div>
+                </div>
+            </section>
+            <section id="Utrecht and Amsterdam" class="layout2">
+                <div id="Netherlands" class="sidebar2">
+                    <h1 style="text-align: center;">The Netherlands</h1>
+                    <p>
+                        Our stop after Koln got us to Utrecht where we spent time with Tess,
+                        Jacob's sister, and enjoyed the life there. The bikes, the people, the food, it
+                        was all a wonderful time.
+                    </p>
+                </div>
+                <div id="Dutch Gallery" class="middlebar2">
+                    <div class="media-reel">
+                        <figure class="media">
+                            <img src="assets/img/tessi.jpeg" alt="">
+                        </figure>
+                        <figure class="media">
+                            <img src="assets/img/utrechtkayak.jpeg" alt="">
+                        </figure>
+                        <figure class="media">
+                            <img src="assets/img/tessiwozkayak.jpeg" alt="">
+                        </figure>
+                        <figure class="media">
+                            <img src="assets/img/utrecht1.jpeg" alt="">
+                        </figure>
+                        <figure class="media">
+                            <img src="assets/img/utrechtbikes.jpeg" alt="">
+                        </figure>
+                        <figure class="media">
+                            <img src="assets/img/colinbar.jpeg" alt="">
+                        </figure>
+                        <figure class="media">
+                            <img src="assets/img/amsterdammain.jpeg" alt="">
+                        </figure>
+                    </div>
+                </div>
+            </section>
+            <section id="Switzerland" class="layout2">
+                <div id="Switzerland Overview" class="sidebar2">
+                    <h1 style="text-align: center;">Switzerland</h1>
+                    <p>
+                        The last part of our trip was to end in Geneva. After a <i>very, very long</i>
+                        trip around Europe and a very long train ride from Amsterdam we eventually got to
+                        Geneva and spent the last few days there.
+                    </p>
+                </div>
+                <div id="Swiss Gallery" class="middlebar2">
+                    <div class="media-reel">
+                        <figure class="media">
+                            <img src="assets/img/geneva1.jpeg" alt="">
+                        </figure>
+                        <figure class="media">
+                            <img src="assets/img/cernhiggs.jpeg" alt="">
+                            <p>Perhaps my favorite part. Visiting CERN!</p>
+                        </figure>
+                        <figure class="media">
+                            <img src="assets/img/wozchoully.jpeg" alt="">
+                        </figure>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p> © <span id="year"></span> Jake Shuey• <a href="about.html">About</a> • <a
+                href="mailto:shueyjakob@gmail.com">shueyjakob@gmail.com</a> •
+            <a href="#top">Return to Top</a>
+        </p>
+        <p style="font-size: x-small;">You may toggle between light and dark mode
+            with the button at the far right of the nav bar</p>
+    </footer>
+
+    <script src="assets/js/main.js" defer></script>
+</body>
+
+</html>

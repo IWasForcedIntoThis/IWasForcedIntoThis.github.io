@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Contact • Jake Shuey</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Portfolio of Jake Shuey" />
+    <!-- Set theme ASAP to avoid dark→light flash -->
+    <script>
+        (function () {
+            const storageKey = 'theme';
+            const root = document.documentElement;
+            const saved = localStorage.getItem(storageKey);
+
+            let choice = (saved === 'light' || saved === 'dark') ? saved : null;
+
+            // If no saved theme, fall back to system preference
+            if (!choice) {
+                const prefersDark = window.matchMedia &&
+                    window.matchMedia('(prefers-color-scheme: dark)').matches;
+                choice = prefersDark ? 'dark' : 'light';
+            }
+
+            root.dataset.theme = choice; // sets data-theme="light" or "dark"
+        })();
+    </script>
+    <link rel="preload" href="assets/css/styles.css" as="style" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="icon" href="assets/icons/favicon.ico" sizes="any" />
+    <link rel="icon" href="assets/icons/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png" />
+</head>
+
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+        <a class="brand" href="index.html" aria-label="Go to homepage">
+            <img src="assets/icons/TauIcon-NoBG.png" alt="" width="50" height="50" />
+            <span>Jake Shuey</span>
+        </a>
+
+        <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
+            <span class="visually-hidden">Menu</span>
+            ☰
+        </button>
+
+        <nav id="site-nav" class="site-nav" aria-label="Primary">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="work.html">Work Experience</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="hobbies.html">Hobbies</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="theme-toggle" id="themeToggle" aria-pressed="false">🌙</button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="Contact Info" class="container">
+            <h1 style="text-align: center;">Contact Information and Preferences</h1>
+            <p>
+                I prefer email or text where possible. I'm very scatterbrained at times and
+                this allows me ease of access and response. Not to mention that I try to avoid
+                my phone when possible so as to be present wherever I am. I will still respond to
+                calls, but I ask that you understand I may not answer most time.
+            </p>
+            <address>
+                You may contact me via phone at: <br>
+                307-757-7736 <br><br>
+                Or via email at: <br>
+                shueyjakob@gmail.com <br>
+            </address>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p> © <span id="year"></span> Jake Shuey• <a href="about.html">About</a> • <a
+                href="mailto:shueyjakob@gmail.com">shueyjakob@gmail.com</a> •
+            <a href="#top">Return to Top</a>
+        </p>
+        <p style="font-size: x-small;">You may toggle between light and dark mode
+            with the button at the far right of the nav bar</p>
+    </footer>
+
+    <script src="assets/js/main.js" defer></script>
+</body>
+
+</html>

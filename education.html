@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Education • Jake Shuey</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Set theme ASAP to avoid dark→light flash -->
+    <script>
+        (function () {
+            const storageKey = 'theme';
+            const root = document.documentElement;
+            const saved = localStorage.getItem(storageKey);
+
+            let choice = (saved === 'light' || saved === 'dark') ? saved : null;
+
+            // If no saved theme, fall back to system preference
+            if (!choice) {
+                const prefersDark = window.matchMedia &&
+                    window.matchMedia('(prefers-color-scheme: dark)').matches;
+                choice = prefersDark ? 'dark' : 'light';
+            }
+
+            root.dataset.theme = choice; // sets data-theme="light" or "dark"
+        })();
+    </script>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+        <a class="brand" href="index.html" aria-label="Go to homepage">
+            <img src="assets/icons/TauIcon-NoBG.png" alt="" width="50" height="50" />
+            <span>Jake Shuey</span>
+        </a>
+
+        <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
+            <span class="visually-hidden">Menu</span>
+            ☰
+        </button>
+
+        <nav id="site-nav" class="site-nav" aria-label="Primary">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="work.html">Work Experience</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="hobbies.html">Hobbies</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="theme-toggle" id="themeToggle" aria-pressed="false">🌙</button>
+        </nav>
+    </header>
+
+    <main id="main" class="container">
+        <!-- 1) Top “rundown” cards -->
+        <section aria-labelledby="overview">
+            <h1 id="overview"></h1>
+            <p class="overview text">
+                Despite being the first to admit that school was often hard for me —especially at a
+                young age due to ADHD— I also love education. Teaching and learning are fun for me
+                and I find a deep satisfaction when it comes to them. I hope to be able to engage
+                in education after I recieve my bachelors.
+
+                I would also like to pursue a masters in engineering and a PhD in engineering as well.
+                Though that'll arrive at a later time in my life they're still long term goals of mine
+                in regards to education and my future in it.
+            </p>
+            <div class="grid cards">
+                <article class="card index edu csu">
+                    <h2>Colorado State University - Fort Collins, Colorado</h2>
+                    <ul class="pill-list">
+                        <li>Member of Tau Beta Pi</li>
+                        <li>Safety Liason for Ram Rocketry</li>
+                        <li>Working closely with the RISE Hub.</li>
+                    </ul>
+                </article>
+                <article class="card index edu cc">
+                    <h2>
+                        Concordia College - Moorhead, Minnesota
+                    </h2>
+                    <ul class="pill-list">
+                        <li>
+                            Brief stint prior to enlisting in the Army.
+                        </li>
+                        <li>
+                            Performed a handful of concerts.
+                        </li>
+                        <li>
+                            Member of the Concordia College Symphonia.
+                        </li>
+                        <li>
+                            Founder of —now defunct— 'Internationalist' magazine.
+                        </li>
+                    </ul>
+                </article>
+
+                <!-- Add more short cards as needed -->
+            </div>
+        </section>
+
+        <!-- 2) Deep-dive sections (one per role) -->
+        <section id="role-csu">
+            <div class="columns edu csu">
+                <div class="sidebar">
+                    <h1>Colorado State University</h1>
+                    <p class="subdued">Fort Collins, Colorado</p>
+                    <p class="subdued">Mechanical Engineering with Aerospace Concentration</p>
+                    <p class="subdued">Autumn 2023 - Present</p>
+                </div>
+                <div class="middle">
+                    <p>
+                        Returned to college in autumn 2023 as an undeclared student. I immediately started working
+                        toward getting into the engineering program. I was eventually able to join the program in autumn
+                        2024. During this time I was also invited to join Tau Beta Pi and did so that same semester.
+                        I have been closely working with Dr.
+                        Carmen Menoni since March 2024 and have been getting increasingly
+                        involved in the research being performed there. Often working in maintenance of our systems,
+                        but also
+                        making new ones as needed by various graduate students in the lab. As someone who is —openly and
+                        frustratingly— serious about safety I have been heavily involved in the
+                        Ram Rocketry team. Especially wtih assisting in safety procedures and function. E.G.
+                        Ensuring proper disposal of expended motors and adherance to laws and regulations as required.
+                        Often to the chagrin of my peers.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section id="role-cc">
+            <div class="columns edu cc">
+                <div class="sidebar">
+                    <h1>Concordia College</h1>
+                    <p class="subdued">Moorhead, Minnesota</p>
+                    <p class="subdued">Violin Performance</p>
+                    <p class="subdued">Autumn 2018 - Spring 2019</p>
+                </div>
+                <div class="middle">
+                    <p>
+                        After only a few years of playing the violin I was enthralled. I auditioned for
+                        Concordia College's violin performance major and —despite my fears—
+                        managed to succeed and got a scholarship. Spent some of my freetime as a journalist for my
+                        magazine. Interviewed several people in local governments and wrote nearly 3 dozen essays in one
+                        year. Eventually ran out of both funds and motivation as I realized my peers were not the
+                        type of people I wanted to be around. After dropping out —with a freely admitted horrendous
+                        GPA— I was a bit listless, but I got the drive to enlist in the US Army and subsequently did so
+                        in November of 2019.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer">
+        <p> © <span id="year"></span> Jake Shuey• <a href="about.html">About</a> • <a
+                href="mailto:shueyjakob@gmail.com">shueyjakob@gmail.com</a> •
+            <a href="#top">Return to Top</a>
+        </p>
+        <p style="font-size: x-small;">You may toggle between light and dark mode
+            with the button at the far right of the nav bar</p>
+    </footer>
+    <script src="assets/js/main.js" defer></script>
+</body>
+
+</html>

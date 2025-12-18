@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Hobbies • Jake Shuey</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Set theme ASAP to avoid dark→light flash -->
+    <script>
+        (function () {
+            const storageKey = 'theme';
+            const root = document.documentElement;
+            const saved = localStorage.getItem(storageKey);
+
+            let choice = (saved === 'light' || saved === 'dark') ? saved : null;
+
+            // If no saved theme, fall back to system preference
+            if (!choice) {
+                const prefersDark = window.matchMedia &&
+                    window.matchMedia('(prefers-color-scheme: dark)').matches;
+                choice = prefersDark ? 'dark' : 'light';
+            }
+
+            root.dataset.theme = choice; // sets data-theme="light" or "dark"
+        })();
+    </script>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+        <a class="brand" href="index.html" aria-label="Go to homepage">
+            <img src="assets/icons/TauIcon-NoBG.png" alt="" width="50" height="50" />
+            <span>Jake Shuey</span>
+        </a>
+
+        <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
+            <span class="visually-hidden">Menu</span>
+            ☰
+        </button>
+
+        <nav id="site-nav" class="site-nav" aria-label="Primary">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="work.html">Work Experience</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="hobbies.html">Hobbies</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="theme-toggle" id="themeToggle" aria-pressed="false">🌙</button>
+        </nav>
+    </header>
+
+    <section class="layout2">
+        <div class="sidebar2">
+            <h1>Ice Hockey</h1>
+            <p>
+                Growing up in Alaska there is very little to do <i>besides winter sports</i>. So
+                much like my brothers I fell head-over-heels for hockey growing up. I eventually got
+                bitten by the goalie bug and minded the net for most of my time playing hockey as a kid.
+                I grew up watching the highlights of Martin Brodeur, Dominik Hasek, and Patrick Roy. I attempted
+                to emulate them as best I could. In doing so I developed a style of my own like every goalie.
+            </p>
+            <p>
+                After a serious injury when I was playing as a defenseman, I hung up my skates, but never stopped
+                watching my favorite team. The <i>Montreal Canadiens</i>. Through thick and thin I've been a fan
+                for the better part of 20 years now. It was Carey Price and his injury that actually
+                brought me back to the sport. He inspired me to try it again and now I play adult hockey.
+                No where near the level I was before, but hockey is hockey and for me its blood.
+            </p>
+        </div>
+        <div class="middlebar2">
+            <div class="gallery">
+                <img src="assets/img/habshappy.JPG" alt="">
+                <img src="assets/img/dobes-monty.jpg" alt="">
+                <img src="assets/img/carey2.jpg" alt="">
+                <img src="assets/img/ballarena.jpeg" alt="">
+                <img src="assets/img/ice-side.jpeg" alt="">
+            </div>
+        </div>
+    </section>
+    <section class="layout2">
+        <div class="sidebar2">
+            <h1>Mountaineering</h1>
+            <p>
+
+                I began getting into mountaineering when I was 21 while stationed at Fort Lewis, WA.
+
+                Initially was just a few long hikes, but they eventually became multi-day trips to the mountains of
+                Washington state.
+
+                We managed to summit Mount Hopper —partially— in 2022. It was a huge experience for me and was perhaps
+                my favorite to date.
+
+            </p>
+            <p>
+                Despite that its been a while since I've gone up again. I would like to soon though!
+                My goal is to eventually do a through-hike through Hoh Rainforest as well as summit
+                —properly this time— Mount Hopper, Mount Rainier, and Mount Baker. Though I may have to wait!
+                Not a lot of time to go to Washington these days.
+            </p>
+        </div>
+        <div class="middlebar2">
+            <div class="gallery">
+                <img src="assets/img/rainierfriend.jpeg" alt="">
+                <img src="assets/img/mistakes.jpeg" alt="">
+                <img src="assets/img/hoppersnow.JPG" alt="">
+                <img src="assets/img/hopperascent.JPG" alt="">
+                <img src="assets/img/rainierpano.jpeg" alt="">
+                <img src="assets/img/rainierselfie.jpg" alt="">
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <footer class="site-footer">
+        <p> © <span id="year"></span> Jake Shuey• <a href="about.html">About</a> • <a
+                href="mailto:shueyjakob@gmail.com">shueyjakob@gmail.com</a> •
+            <a href="#top">Return to Top</a>
+        </p>
+        <p style="font-size: x-small;">You may toggle between light and dark mode
+            with the button at the far right of the nav bar</p>
+    </footer>
+
+    <script src="assets/js/main.js" defer></script>
+</body>
+
+</html>

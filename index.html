@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Home • Jake Shuey</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Portfolio of Your Name — engineer, maker, and problem-solver." />
+
+    <!-- Set theme ASAP to avoid dark→light flash -->
+    <script>
+        (function () {
+            const storageKey = 'theme';
+            const root = document.documentElement;
+            const saved = localStorage.getItem(storageKey);
+
+            let choice = (saved === 'light' || saved === 'dark') ? saved : null;
+
+            // If no saved theme, fall back to system preference
+            if (!choice) {
+                const prefersDark = window.matchMedia &&
+                    window.matchMedia('(prefers-color-scheme: dark)').matches;
+                choice = prefersDark ? 'dark' : 'light';
+            }
+
+            root.dataset.theme = choice; // sets data-theme="light" or "dark"
+        })();
+    </script>
+
+    <link rel="preload" href="assets/css/styles.css" as="style" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="icon" href="assets/icons/favicon.ico" sizes="any" />
+    <link rel="icon" href="assets/icons/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png" />
+</head>
+
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+        <a class="brand" href="index.html" aria-label="Go to homepage">
+            <img src="assets/icons/TauIcon-NoBG.png" alt="" width="50" height="50" />
+            <span>Jake Shuey</span>
+        </a>
+
+        <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
+            <span class="visually-hidden">Menu</span>
+
+        </button>
+
+        <nav id="site-nav" class="site-nav" aria-label="Primary">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="work.html">Work Experience</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="hobbies.html">Hobbies</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="theme-toggle" id="themeToggle" aria-pressed="false">🌙</button>
+        </nav>
+    </header>
+
+    <main id="main" class="container">
+        <section class="hero">
+            <h1>
+                Engineer. Husband. Veteran. Explorer.
+            </h1>
+            <div class="hero-cta">
+                <a class="btn" href="projects.html">View Projects</a>
+                <a class="btn" href="work.html">Work Experience</a>
+                <a class="btn" href="education.html">Education</a>
+                <a class="btn" href="about.html">About Me</a>
+            </div>
+
+        </section>
+
+
+        <div class="columns">
+            <div class="sidebar">
+                <h1></h1>
+                <figure class="head">
+                    <img src="assets/img/Headshot-Tie.png" alt="head">
+                </figure>
+                <p class="quote">
+                    When you go to war as a boy, you have a great illusion of immortality. Other people get killed,
+                    not you... Then, when you are badly wounded the first time, you lose that illusion...
+                <p>
+                    -Ernest Hemingway
+                </p>
+                </p>
+
+            </div>
+            <div class="middle">
+                <h1>A Preview of Me</h1>
+                <p>
+                    My background in the military —and past life as a music student and journalist— gives me a
+                    critically important skill set in engineering. The ability to think outside of the box for
+                    simple, but effective solutions to problems. I will always strive to find the solution to problems
+                    and puzzles. I thrive in environments
+                    that give me a good challenge and allow me to express myself in my solutions.
+                </p>
+                <p>
+                    In many ways people view engineering —and STEM fields overall— in a way that masks them as
+                    uncreative pursuits. I firmly believe that to be untrue. Oweing to my time in the art world
+                    and within the humanities sphere in general I have come to view the STEM fields as a
+                    unique form of art and artistic impression all their own. Much like <i>art</i>, that most would
+                    think of with that term, it also causes confusion, anger, frustration, and —most importantly— breath
+                    taking and soul shattering moments of awe and wonder.
+                </p>
+                <section class="grid cards">
+                    <article class="card index">
+                        <h2>Project Snapshot</h2>
+                        <p>
+                            Currently designing a 'Glide-Back-Booster' style rockety recovery system. Loosly based on
+                            the boosters of the <i>Energia-Buran</i> Soviet space shuttle and the Langley Research
+                            Center's <i>Glide-Back-Booster</i> developed for similar purposes as the Soviet designs.
+                        </p>
+                        <a class="link" href="projects.html">See more →</a>
+                    </article>
+                    <article class="card index">
+                        <h2>Recent Hard Skills</h2>
+                        <ul class="pill-list">
+                            <li>MATLAB</li>
+                            <li>SolidWorks</li>
+                            <li>Machine Learning</li>
+                            <li>Multi-Language Coding</li>
+                            <li>Manual and CNC Machining</li>
+                            <li>Vacuum Systems</li>
+                            <li>Optical Systems (I.E. Optical tables, lasers, etc)</li>
+                        </ul>
+                    </article>
+                    <article class="card index">
+                        <h2>Soft Skills</h2>
+                        <ul class="pill-list">
+                            <li>Time Mangement</li>
+                            <li>Project Management</li>
+                            <li>Leadership</li>
+                            <li>Documentation and Records Keeping</li>
+                        </ul>
+                    </article>
+                    <article class="card index">
+                        <h2>What I’m exploring now: </h2>
+                        <p>
+                            Simple implementation of rocket design. E.G. The best way to make a modular rocket for
+                            high power rocketry (HPR) without the use of things such as epoxy and adhesive.
+                        </p>
+                    </article>
+                    <article class="card index" style="grid-column: span 12;">
+                        <h2>Currently Reading:</h2>
+                        <p>
+                            Attempting —operative word there— to re-read 'For Whom The Bell Tolls' by
+                            Ernest Hemingway
+                        </p>
+                    </article>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <p> © <span id="year"></span> Jake Shuey• <a href="about.html">About</a> • <a
+                href="mailto:shueyjakob@gmail.com">shueyjakob@gmail.com</a> •
+            <a href="#top">Return to Top</a>
+        </p>
+        <p style="font-size: x-small;">You may toggle between light and dark mode
+            with the button at the far right of the nav bar
+        </p>
+    </footer>
+
+
+    <script src="assets/js/main.js" defer></script>
+</body>
+
+</html>

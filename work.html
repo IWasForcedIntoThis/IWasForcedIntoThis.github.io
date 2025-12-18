@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Work Experience • Jake Shuey</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Set theme ASAP to avoid dark→light flash -->
+    <script>
+        (function () {
+            const storageKey = 'theme';
+            const root = document.documentElement;
+            const saved = localStorage.getItem(storageKey);
+
+            let choice = (saved === 'light' || saved === 'dark') ? saved : null;
+
+            // If no saved theme, fall back to system preference
+            if (!choice) {
+                const prefersDark = window.matchMedia &&
+                    window.matchMedia('(prefers-color-scheme: dark)').matches;
+                choice = prefersDark ? 'dark' : 'light';
+            }
+
+            root.dataset.theme = choice; // sets data-theme="light" or "dark"
+        })();
+    </script>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+        <a class="brand" href="index.html" aria-label="Go to homepage">
+            <img src="assets/icons/TauIcon-NoBG.png" alt="" width="50" height="50" />
+            <span>Jake Shuey</span>
+        </a>
+
+        <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
+            <span class="visually-hidden">Menu</span>
+            ☰
+        </button>
+
+        <nav id="site-nav" class="site-nav" aria-label="Primary">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="work.html">Work Experience</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="hobbies.html">Hobbies</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="theme-toggle" id="themeToggle" aria-pressed="false">🌙</button>
+        </nav>
+    </header>
+
+    <main id="main" class="container">
+        <!-- 1) Top “rundown” cards -->
+        <section aria-labelledby="overview" class="overview">
+            <h1 id="overview">Work History and Backgrounds</h1>
+            <p class="overview text">
+                Despite being fairly young I have had a lot of experience in
+                the working world. From the new of engineering research, design and execution
+                all the way to my days performing music and writting essays. This breadth of knowledge,
+                experience, understanding, and methedology has made me an excellent person to have
+                for any project or company.
+            </p>
+            <p class="overview text">
+                Beyond my technical expertise and hard skills I also have learned much from my life
+                in the soft skills and those hard to teach life lessons. From the military I learned the
+                necessity of acceptance of responsibility and the importance of diverse peoples and thoughts.
+                From being a musician I learned the importance of hard work, dilligence to your craft,
+                the drive to improve, and —much to my frustration— that <i>nothing</i> will ever be perfect.
+                I don't know who first said it, but I've taken to the belief that perfect is the enemy of good.
+                I have had to learn this in reasearch and in design where I always strove to do the perfect job
+                and to make the perfect part. However, after months of failure and reflecting on it I had to remember
+                the lessons the violin taught me. This has given me that unique ability in engineering to look for the
+                simple. The simple solution, the simple cause, the simple fix, the simple design.
+                Then when paired together the mass of the simple things becomes the better of a whole
+                and creates a thing of estatic beauty.
+            </p>
+            <p>
+                Perhaps the most important lesson of all came from jouranlism. Can you guess it?
+                You'll only notice the typo after you submit it.
+            </p>
+
+            <div class="grid cards work-cards">
+                <article class="card" style="grid-column: span 12;">
+                    <h2>Research Engineer</h2>
+                    <p>
+                        Assist in the design, prototyping, manufacture, and maintenance of
+                        equipment and components for thin-film optics research.
+                    </p>
+                    <ul class="pill-list">
+                        <li>SolidWorks</li>
+                        <li>GD&T</li>
+                        <li>MATLAB</li>
+                        <li>Python</li>
+                        <li>C++/C#</li>
+                        <li>Microcontrollers</li>
+                        <li>Sensitive Data Control</li>
+                    </ul>
+                    <a class="link" href="#role-euv">Jump to details →</a>
+                </article>
+
+                <article class="card">
+                    <h2>Chemical, Biological, Radiological, and Nuclear (CBRN) Sergeant</h2>
+                    <p>Maintained federal compliance with CBRN regulations.</p>
+                    <ul class="pill-list">
+                        <li>Guiger-Muller Counters</li>
+                        <li>Gas Mask Repair</li>
+                        <li>Security of Equipment</li>
+                        <li>Extensive Chemical Experience</li>
+                    </ul>
+                    <a class="link" href="#role-cbrn">Jump to details →</a>
+                </article>
+
+                <article class="card">
+                    <h2>United States Army Infantry</h2>
+                    <p>Trained in a variety of systems and technologies.</p>
+                    <p>Left active service as a Non-Commissioned Officer.</p>
+                    <ul class="pill-list">
+                        <li>Foreign Area Advisory Trainer</li>
+                        <li>Farsi, Pashto, Dari, Turkish,
+                            French (West African and Continental),
+                            and Norwegian Language Training</li>
+                        <li>Trained Drone Pilot</li>
+                        <li>Recon and Search and Rescue Trained</li>
+                        <li>Commander of the Stryker ICV</li>
+                        <li>Secret Security Clerance</li>
+                    </ul>
+                    <a class="link" href="#role-inf">Jump to details →</a>
+                </article>
+
+                <article class="card">
+                    <h2>Editor-In-Chief</h2>
+                    <p>Co-Founded and helped run the 'Internationalist' magazine.</p>
+                    <ul class="pill-list">
+                        <li>
+                            Wrote ~3 Dozen Essays In 12 Months
+                        </li>
+                        <li>
+                            Edited ~4 Dozen Essays.
+                        </li>
+                        <li>
+                            Interviewed Local Officals and State Senators.
+                        </li>
+                    </ul>
+                    <a class="link" href="#role-inter">
+                        Jump to details →
+                    </a>
+                </article>
+
+                <article class="card">
+                    <h2>Violin Instructor</h2>
+                    <p>Taught a few young students in my last two years of highschool.</p>
+                    <ul class="pill-list">
+                        <li>
+                            Taught ~10 students on average per week.
+                        </li>
+                        <li>
+                            Most successfully went into highschool orchestras with two going into college
+                            orchestras as well.
+                        </li>
+                        <li>
+                            Got wonderful teaching experience and revelled in the
+                            pedagogical experience.
+                        </li>
+                    </ul>
+                    <a class="link" href="#role-teach">
+                        Jump to details →
+                    </a>
+                </article>
+
+                <!-- Add more short cards as needed -->
+            </div>
+        </section>
+
+        <!-- 2) Deep-dive sections (one per role) -->
+        <section class="work-section" id="role-euv" aria-labelledby="role-euv-h">
+            <header class="work-section__header">
+                <h2 id="role-euv-h">Research Engineer</h2>
+                <p class="muted">March 2024 - Present | Extreme Ultra-Violet -
+                    Engineering Research Center - Colorado State University</p>
+                <ul class="bullets">
+                    <li>
+                        Designed a novel system for the SPECTOR vacuum chamber to assist
+                        in the depositon of quadnary thin films on optics.
+                    </li>
+                    <li>
+                        Programmed numerous motor systems using both Arduinos and Raspberry Pi Systems.
+                    </li>
+                    <li>
+                        Assisted interns in their designs and promoted correct application of problem solving skills.
+                    </li>
+                    <li>
+                        Performed demanding maintenance of numerous systems within the lab.
+                        Including —though not limited to— the SPECTOR and LANS vacuum systems.
+                        Newly designed chambers with no prior documentation. Sandblasting cabinets, air compressors,
+                        Potassium Hydroxide baths —while ensuring adequate ratios—, and enforced safety procedures
+                        for all of these systems.
+                    </li>
+                </ul>
+            </header>
+
+            <!-- Horizontally scrollable photo reel with snap + captions -->
+            <div class="media-reel" role="region" aria-label="Research gallery">
+                <figure class="media">
+                    <img src="assets/img/work1.jpeg" alt="One of mnay chambers." loading="lazy">
+                    <figcaption>One of many, many chambers around the lab.</figcaption>
+                </figure>
+                <figure class="media">
+                    <img src="assets/img/work-parts.jpeg" alt="Parts for my design!" loading="lazy">
+                    <figcaption>The first couple parts of my designs.</figcaption>
+                </figure>
+                <figure class="media">
+                    <img src="assets/img/work-mill.jpeg" alt="Milling Exp" loading="lazy">
+                    <figcaption>Getting experience on the mill!</figcaption>
+                </figure>
+                <figure class="media">
+                    <img src="assets/img/meltedhotend.jpeg" alt="Hotend Elephants Food" loading="lazy">
+                    <figcaption>
+                        Remnants from Elephant's Foot —as in Chernobyl— made of Carbon-Fiber Reinforced Polycarbonate.
+                        It was a nightmare to get clear.
+                    </figcaption>
+                </figure>
+                <figure class="media">
+                    <img src="assets/img/whiteboard.jpeg" alt="Whiteboard at work" loading="lazy">
+                    <figcaption>
+                        My 'ideas' whiteboard in all its insanity.
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section class="work-section" id="role-cbrn" aria-labelledby="role-cbrn-h">
+            <header class="work-section__header">
+                <h2 id="role-cbrn-h">CBRN Sergeant</h2>
+                <p class="muted">May 2023 - September 2025</p>
+                <ul class="bullets">
+                    <li>Restored and maintained nearly 125 Geiger-Muller counters</li>
+                    <li>Ensured 100% compliance with federal CBRN regulations.</li>
+                    <li>Introduced additional training in CBRN protection and fighting.</li>
+                    <li>
+                        Heavily enforced safety within the unit. In doing so I prevented an incident that
+                        would have caused several injuries and potential fatalities.
+                    </li>
+                    <li>
+                        Created a system of training for CBRN that would allow future junior soldiers
+                        and lower Non-Commissioned Officers to train and learn CBRN warfare.
+                    </li>
+                    <li>
+                        Ensured that all soldiers had adequate CBRN protective equipment. Including demanding
+                        the presence of certain PPE prior to training to prevent potential injuries.
+                    </li>
+                    <li>
+                        My continual presence in training and advising led to my second Army Commendation Medal.
+                    </li>
+                    <li>
+                        Medically retired from the Army on 23rd September 2025. Finishing nearly 6 years of service.
+                    </li>
+                </ul>
+            </header>
+
+            <div class="media-reel" role="region" aria-label="CBRN Gallery">
+                <figure class="media">
+                    <img src="assets/img/gay-ng.jpeg" alt="Working with my supply" loading="lazy">
+                    <figcaption>
+                        My supply in the National Guard. He's a good kid.
+                    </figcaption>
+                </figure>
+                <figure class="media">
+                    <img src="assets/img/ngammo.jpeg" alt="Controlling Ammo and Radios" loading="lazy">
+                    <figcaption>
+                        Took control of ammo and radios during our training. Always had a good time.
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section class="work-section" id="role-inf" aria-labelledby="role-inf-h">
+            <header class="work-section__header">
+                <h2 id="role-inf-h">United States Army Infantry</h2>
+                <p class="muted">November 2019 - May 2023</p>
+                <ul class="bullets">
+                    <li>
+                        Initial enlistment on 11th November 2019 at 19 years old.
+                    </li>
+                    <li>
+                        Stationed at Joint-Base Lewis-McChord, Fort Lewis. Assigned to
+                        5th Battalion 20th Infantry Regiment, 1st Brigade, 2nd Infantry Division,
+                        Stryker Brigade Combat Team
+                    </li>
+                    <li>
+                        First billeted as a rifleman in July 2020. Then designated a Stryker crewman where I would spend
+                        the majority
+                        of my career in active military. Achieved Army Achievement Medal due to attention to detail and
+                        quality of my work.
+                    </li>
+                    <li>
+                        Following promotion to Specialist I was assigned as a Stryker commander. Achieved recognition as
+                        the brigade's best crewmember.
+                    </li>
+                    <li>
+                        Deployed to Thailand for Cobra Gold and spent approximately 2 months
+                        training the Thai Royal Army in Counter Insurgency Warfare
+                        whilst recieving training in jungle warfare.
+                    </li>
+                    <li>
+                        Upon return took part in Operation Allies Refuge to provide aid to
+                        incoming Afghan refugees.
+                    </li>
+                    <li>
+                        Transitioned to legal NCO due to an injury. During this time I became heavily involved
+                        in drone operation and training, foreign area advising, foreign language training,
+                        and acted as advisor and trainer for new Stryker crewmembers.
+                    </li>
+                    <li>
+                        Recived promotion to Sergeant due in part to the quality of my work and work ethic.
+                        Finished my active duty service acting as a trainer for new soldiers and advisor to my
+                        command team.
+                    </li>
+                    <li>
+                        Recieved my first Army Commendation Medal towards the end of my active duty career for
+                        creating a sytem of training and maintaining that gave my unit a renewed generation of
+                        successful crewmembers and reinvigorated our culture and heritage of Stryker operations.
+                    </li>
+                </ul>
+            </header>
+
+            <div class="media-reel" role="region" aria-label="Inf Gallery">
+                <figure class="media">
+                    <img src="assets/img/fireants.jpeg" alt="The ants hurt a lot!" loading="lazy">
+                    <figcaption>In Thailand doing COIN Training. I was being bit by fireants during this.</figcaption>
+                </figure>
+                <figure class="media">
+                    <img src="assets/img/rta-bd6.jpeg" alt="BD6 with the RTA" loading="lazy">
+                    <figcaption>Training with the Royal Thai Army</figcaption>
+                </figure>
+                <figure class="media">
+                    <img src="assets/img/thaiclimb.JPG" alt="Climbing in Thailand" loading="lazy">
+                    <figcaption>Climbed a mountain with my squad in Thialand! Was a bunch of fun.</figcaption>
+                </figure>
+                <figure class="media">
+                    <img src="assets/img/thaigroup.JPG" alt="Thai SF Team" loading="lazy">
+                    <figcaption>Group photo of us with the one of the RTA Special Forces Teams.</figcaption>
+                </figure>
+                <figure class="media">
+                    <img src="assets/img/thaigroup1.JPG" alt="Group Photo 2" loading="lazy">
+                    <figcaption>Group photo of my squad.</figcaption>
+                </figure>
+                <figure class="media">
+                    <img src="assets/img/thaiterp.JPG" alt="Last day of training" loading="lazy">
+                    <figcaption>Saying goodbye to our interpreter. She was such an awesome help!</figcaption>
+                </figure>
+            </div>
+
+            <header class="work_section__header">
+                <h2 id="role-inf-h">
+                    Military Awards:
+                </h2>
+                <p>After Unit Assignment:</p>
+                <ul>
+                    <li>Army Achievement Medal</li>
+                    <li>2x Army Commendation Medal</li>
+                    <li>Global War On Terrorism Service Medal</li>
+                    <li>NCO Professional Development Ribbon</li>
+                    <li>Army Good Conduct Medal</li>
+                </ul>
+                <p>Prior to Unit Assignment:</p>
+                <ul>
+                    <li>Army Service Ribbon</li>
+                    <li>National Defense Service Medal</li>
+                </ul>
+            </header>
+        </section>
+
+        <section class="work-section" id="role-inter" aria-labelledby="role-inter-h">
+            <header class="work-section-header">
+                <h2 id="role-inter-h">Editor-In-Chief</h2>
+                <p class="muted">December 2018 - July 2019</p>
+                <ul class="bullets">
+                    <li>
+                        Began as a joint-venture with a friend who was interested in journalism.
+                        We co-founded the magazine together to act as a way to discuss politcal beliefs with
+                        numerous people.
+                    </li>
+                    <li>
+                        We went out of our way to include people from all walks of life and especially
+                        those who disagreed with us.
+                    </li>
+                    <li>
+                        Made little to no money month-over-month, but developed a reputation quickly. Eventually was
+                        enough to interview local officials and even a state senator prior to the general election.
+                    </li>
+                    <li>
+                        Shortly after dropping out from Concordia College I also left the magazine. It would go under
+                        following
+                        my other co-founder's departure due to lack of sustainable funding.
+                    </li>
+                </ul>
+            </header>
+        </section>
+        <section class="work-section" id="role-teach" aria-labelledby="role-teach-h">
+            <header class="work-section-header">
+                <h1 id="role-teach-h">
+                    Violin Instructor
+                </h1>
+                <p class="muted">
+                    March 2017 - July 2018
+                </p>
+                <ul class="bullets">
+                    <li>
+                        Taught a handful of young students on the violin. Most would go on to play
+                        in highschool and a few in college now.
+                    </li>
+                    <li>
+                        Began as an offer from my french teacher in high school as I was the
+                        principle second violin in my highschool orchestra. Meaning I was the 3rd best violinist
+                        in the orchestra.
+                    </li>
+                    <li>
+                        Taught one class a week with each student typically in their home. The rate was roughly
+                        $20 per hour with each section lasting about an hour.
+                    </li>
+                    <li>
+                        Had I continued on my path to become a violin performance major I would have had to teach more
+                        in college, but that did not work out. Following graduation I stopped teaching in July 2018 to
+                        move to Moorhead, Minnesota.
+                    </li>
+                </ul>
+            </header>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p> © <span id="year"></span> Jake Shuey• <a href="about.html">About</a> • <a
+                href="mailto:shueyjakob@gmail.com">shueyjakob@gmail.com</a> •
+            <a href="#top">Return to Top</a>
+        </p>
+        <p style="font-size: x-small;">You may toggle between light and dark mode
+            with the button at the far right of the nav bar</p>
+    </footer>
+
+    <script src="assets/js/main.js" defer></script>
+</body>
+
+</html>
