@@ -579,7 +579,7 @@ html.js .media.in-view {
     display: flex;
     flex-direction: column;
     padding: 20px;
-    overflow-y: auto;
+    overflow-y: scroll;
 }
 
 .gallery {
