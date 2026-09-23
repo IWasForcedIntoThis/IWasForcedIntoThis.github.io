@@ -568,16 +568,41 @@ html.js .media.in-view {
 
 .sidebar2 {
     padding: 20px;
-    overflow: hidden;
+    overflow: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: color-mix(in oklab, var(--text) 18%, transparent) transparent;
+    mask-image: linear-gradient(to bottom, black 85%, transparent);
+}
+
+.sidebar2::-webkit-scrollbar {
+    width: 6px;
+}
+
+.sidebar2::-webkit-scrollbar-thumb {
+    background: color-mix(in oklab, var(--text) 18%, transparent);
+    border-radius: 999px;
 }
 
 .sidebar2 p {
     text-indent: 25px;
+    overflow-y: scroll;
+}
+
+.sidebar2 :is(h1, h2) {
+    position: sticky;
+    top: -20px;
+    /* cancels .sidebar2's 20px padding so no text peeks above */
+    z-index: 1;
+    margin: 0 0 .5rem 0;
+    padding: 20px 0 .5rem;
+
+    /* same background as body, locked to the viewport so it lines up seamlessly */
+    background: radial-gradient(1200px 600px at 10% 10%, rgba(var(--grad1), 0.5), transparent 30%),
+        var(--bg);
+    background-attachment: fixed;
 }
 
 .middlebar2 {
-    display: flex;
-    flex-direction: column;
     padding: 20px;
     overflow-y: scroll;
 }
